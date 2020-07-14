@@ -6,4 +6,10 @@
 
 
 
+  <ItemGroup>
+    <Folder Include="Views\Hello\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="Views\Hello\Welcome.cshtml" />
+  </ItemGroup>
 </Project>

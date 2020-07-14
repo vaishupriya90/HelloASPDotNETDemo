@@ -14,19 +14,19 @@ namespace HelloASPDotNET.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            string html = "<form method='post' action='/hello'>" +
-                "<input type='text' name='name' />" +
-                "<input type='submit' value='Greet Me!' />" +
-                "</form>";
+            ViewBag.exclamation = "Woooow";
+            List<string> coffeeOptions = new List<string>() { "French Roast", "Espresso", "Instant", "Kopu Luwa" };
+            ViewBag.Coffee = coffeeOptions;
 
-            return Content(html, "text/html");
+            return View();
         }
 
         [HttpPost]
         [Route("/hello")]
-        public IActionResult Welcome(string name = "World")
+        public IActionResult WelcomeYou(string name = "World")
         {
-            return Content("<h1>Welcome to my app, " + name + "!</h1>", "text/html");
+            ViewBag.person = name;
+            return View();
         }
     }
 }

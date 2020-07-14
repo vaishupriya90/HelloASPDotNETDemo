@@ -1,0 +1,30 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    //Layout = null;
+}
+
+<form method='post' action='/hello'>
+    
+    <input type='text' name='name' />
+    <input type='submit' value='Greet Me!' />
+    
+</form>
+<h4>@ViewBag.exclamation</h4>
+<h5>Coffees</h5>
+<ol>
+
+    @foreach(string coffeeType in ViewBag.Coffee)
+    {
+        @if (coffeeType == "Instant")
+        {
+            <li style="color: red;">@coffeeType</li>
+        }
+        else
+        {
+
+            <li>@coffeeType</li>
+        }
+     }
+</ol>
